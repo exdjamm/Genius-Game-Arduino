@@ -9,11 +9,11 @@ void PiscaLeds(const int led){
 	}
 }
 
-{
+bool VerificarMemoria(){
 	int i = 0;
 	while(){
 		if (digitalRead(botao[cores[i]])){
-
+			
 		} 
 		i++;
 	}

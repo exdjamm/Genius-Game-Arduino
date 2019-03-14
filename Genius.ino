@@ -1,14 +1,13 @@
-// Botaos do Genius : 1=red;2=blue;3=green;4=yellow.
-int botaos[4] = {1,2,3,4};
+void PiscaLeds(const int led);
+bool VerificarMemoria();
 
-// Leds do Genius : 1=red;2=blue;3=green;4=yellow.
-int leds[4]   = {5,6,7,8}; 
+#include <commands.h>
 
-// Numero aleatorio para a cor.
-int Nr;
-
-// Vetor para salvar qual cor foi adicionada a memoria.
-int cores[10];
+int botaos[4] = {1,2,3,4};// Botaos do Genius : 1=red;2=blue;3=green;4=yellow.
+int leds[4]   = {5,6,7,8}; // Leds do Genius : 1=red;2=blue;3=green;4=yellow.
+int Nr;// Numero aleatorio para a cor.
+int cores[10];// Vetor para salvar qual cor foi adicionada a memoria.
+int Contar = 0;// Numero de onde esta o vetor.
 
 void setup() {
 	// Declarando os pinos.
@@ -19,5 +18,8 @@ void setup() {
 }
 
 void loop() {
-	Nr = random(0,4);
+	Nr = random(1,4);
+	cores[iI] = Nr;
+	PiscaLed(Contar);
+	iI++;
 }

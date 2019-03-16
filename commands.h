@@ -1,6 +1,6 @@
 
 
-void ligaLeds(int *vetor[]){
+void ligaLeds(int vetor[]){
 	int i = 0;
 	while( i<= sizeof(vetor)/sizeof(int)){
 	digitalWrite(vetor[i], HIGH);

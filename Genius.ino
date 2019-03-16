@@ -1,4 +1,4 @@
-void ligaLeds(int *vetor[]);
+void ligaLeds(int vetor[]);
 
 #include "commands.h"
 

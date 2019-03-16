@@ -1,13 +1,12 @@
 
 
-void ligaLeds(int vetor[]){
-	int i = 0;
-	while( i<= sizeof(vetor)/sizeof(int)){
-	digitalWrite(vetor[i], HIGH);
-	//Serial.println(sizeof(vetor)/sizeof(int));
-	delay(200);
-	digitalWrite(vetor[i], LOW);
-	delay(200);
-	i++;
+void ligaLeds(){
+	int i;
+  for(i=0;i<(sizeof(cores)/sizeof(int));++i){
+    
+    digitalWrite(cores[i], HIGH);
+    delay(1000);
+    digitalWrite(cores[i], LOW);
+    delay(500);
     }
 }

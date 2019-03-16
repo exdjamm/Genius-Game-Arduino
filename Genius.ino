@@ -1,6 +1,6 @@
 void ligaLeds();
 
-#include "LigaLedSequencia.h"
+#include "commands.h"
 
 //int botaos[4] = {2,3,4,5};// Botaos do Genius : 1=red;2=blue;3=green;4=yellow.
 int leds[4]   = {2,3,4}; // Leds do Genius : 1=red;2=blue;3=green;4=yellow.

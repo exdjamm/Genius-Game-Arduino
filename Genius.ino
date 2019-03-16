@@ -1,36 +1,27 @@
-void ligaLeds();
-
-int  cores[] = {2,3,2,2,3,2,3};
+int buttons[2] = {8,9}; // Pinos dos botoes
+int lose_game = false;  // Se errou a sequencia
+int colors[100] = {};   // Sequencia
+int leds[2] = {2,3};    // Pinos dos leds
+int button_on = 0;      // Se o botao precionado foi o mesmo do led
+int level = 0;          // Rodada
 
 #include "commands.h"
 
-// Pinos dos leds
-int ledY = 5;
-int ledG = 4;
-int ledB = 3;
-int ledR = 2; 
-
-// Pinos dos botoes
-int buttonY = 11;
-int buttonG = 10;
-int buttonB = 9;
-int buttonR = 8;
-
-void setup() {
+void setup(){
   Serial.begin(9600);
+  randomSeed(analogRead(0)); // Semente para criar o numeros aleatorios
 	// Declarando o modo dos pinos
-		// Leds
-		pinMode(ledG, OUTPUT);
-		pinMode(ledY, OUTPUT);
-		pinMode(ledB, OUTPUT);
-    pinMode(ledR, OUTPUT);
-		// Botoes
-		pinMode(buttonG, INPUT);
-		pinMode(buttonY, INPUT);
-		pinMode(buttonB, INPUT);
-    pinMode(buttonR, INPUT);
+  for(int i = 0;i<2;++i){pinMode(leds[i], OUTPUT);} // Leds
+  for(int i = 0;i<2;++i){pinMode(buttons[i], INPUT);}  // Botoes
 }
 
 void loop() {
-  ligaLeds();
+  if(lose_game){
+    int colors[100] = {};
+    lose_game = false;
+    level = 0;}
+  
+  addSequence();
+  sequence();
+  
 }

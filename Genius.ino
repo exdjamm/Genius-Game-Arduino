@@ -12,7 +12,6 @@ int level = 0;          // Rodada
 #include "commands.h"
 
 void setup(){
-  Serial.begin(9600);
   randomSeed(analogRead(0)); // Semente para criar o numeros aleatorios
 	// Declarando o modo dos pinos
   for(int i = 0;i<4;++i){pinMode(leds[i], OUTPUT);} // Leds

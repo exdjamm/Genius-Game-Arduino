@@ -31,7 +31,7 @@ void waitPlay(){
       if(digitalRead(buttons[i]) == HIGH){
         button_on = i ;
         digitalWrite(leds[i], HIGH);
-        delay(1000);
+        delay(500);
         digitalWrite(leds[i], LOW);
         played = true;
         }
@@ -40,9 +40,8 @@ void waitPlay(){
     }
   }
 
-void checkSequence() {
-    if (colors[sequence_led] != button_on) {
-      // GAME OVER.
-      lose_game = true;
+void checkSequence(){
+  if(colors[sequence_led] == button_on){
+    lose_game = true;
     }
   }

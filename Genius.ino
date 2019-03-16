@@ -29,4 +29,5 @@ void loop() {
   addSequence();
   sequence();
   waitPlayer();
+  delay(1000);
 }

@@ -9,7 +9,6 @@ void sequence(){
 }
 
 void addSequence(){
-  Serial.println(level);
   int num = random(2,6);
   colors[level++] = num;
   }
